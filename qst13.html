@@ -9,8 +9,15 @@
 <body>
     <div id="interativo">Clique-me!</div>
     <script>
-        
-    </script>      
+        function teste1() {
+            var interativo = document.getElementById('interativo')
+            interativo.addEventListener("click", modifyText, Funcionou);
+        }
+        interativo.addEventListener('click', displayDialog, false);
+        function displayDialog(){
+            interativo.textContent = "Funcionou!"
+        }
+    </script>
 </body>
 
 </html>
