@@ -36,7 +36,15 @@
                resultado.textContent = " ";
                melhorias.textContent = " ";
             }
-
+            botaoAvaliar.addEventListener('click', avaliarClick, false);
+            function avaliarClick() {
+                if(media >= 60){
+                resultado.textContent = "Parabéns "+nome+ "! Você está aprovado com média" +media+ "!";
+                }
+                else{
+                resultado.textContent = "Você está reprovado com média" +media+ "!";
+                }
+            }
         </script>
     </main>
 
