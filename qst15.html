@@ -31,6 +31,11 @@
             var melhorias = document.getElementById('melhorias')
             var media = document.getElementById('media')
             media = (confeitaria + coberturas + bolos) / 3;
+            botaoLimpar.addEventListener('click', limparClick, false);
+            function limparClick() {
+               resultado.textContent = " ";
+               melhorias.textContent = " ";
+            }
 
         </script>
     </main>
