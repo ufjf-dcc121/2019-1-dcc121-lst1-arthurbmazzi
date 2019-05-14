@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+
 <body>
     <main>
         <h1>Resultado da Avaliação</h1>
-        <h2>Olá <span id="nome">Fulano</span>, você está matriculado há <span id="tempo">2</span> anos 
-        no curso de Confeitaria e as notas das suas disciplinas são: <span id="notaCB">70</span> em 
-        Confeitaria Básica; <span id="notaC">80</span> em Coberturas e <span id="NotaBB">60</span> em 
-        Broas e Bolos</h2>
+        <h2>Olá <span contenteditable="true" id="nome">Fulano</span>, você está matriculado
+            há <span contenteditable="true" id="tempo">2</span> anos no curso de Confeitaria e as notas das
+            suas disciplinas são: <span contenteditable="true" id="notaCB">70</span> em Confeitaria Básica;
+            <span contenteditable="true" id="notaC">80</span> em Coberturas e 
+            <span contenteditable="true" id="NotaBB">60</span> em Broas e Bolos</h2>
         <h2 id="resultado"> </h2>
         <button id="avaliar" class="buttonStyle">Avaliar</button>
         <button id="limpar" class="buttonStyle">Limpar</button>
         <h2 id="melhorias"> </h2>
+        <span id="media"> </span>
+        <script>
+            var nome = document.getElementById('nome')
+            var anos = document.getElementById('tempo')
+            var confeitaria = document.getElementById('notaCB')
+            var coberturas = document.getElementById('notaC')
+            var bolos = document.getElementById('notaBB')
+            var botaoAvaliar = document.getElementById('avaliar')
+            var botaoLimpar = document.getElementById('limpar')
+            var resultado = document.getElementById('resultado')
+            var melhorias = document.getElementById('melhorias')
+            var media = document.getElementById('media')
+            media = (confeitaria + coberturas + bolos) / 3;
+
+        </script>
     </main>
-    
+
 </body>
+
 </html>
