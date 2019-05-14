@@ -15,35 +15,64 @@
             <span contenteditable="true" id="notaC">80</span> em Coberturas e 
             <span contenteditable="true" id="NotaBB">60</span> em Broas e Bolos</h2>
         <h2 id="resultado"> </h2>
+        <h2 id="melhorias"> </h2>
+        <div id="media"></div>
         <button id="avaliar" class="buttonStyle">Avaliar</button>
         <button id="limpar" class="buttonStyle">Limpar</button>
-        <h2 id="melhorias"> </h2>
-        <span id="media"> </span>
         <script>
             var nome = document.getElementById('nome')
             var anos = document.getElementById('tempo')
             var confeitaria = document.getElementById('notaCB')
             var coberturas = document.getElementById('notaC')
-            var bolos = document.getElementById('notaBB')
+            var bolos = document.getElementById('NotaBB')
             var botaoAvaliar = document.getElementById('avaliar')
             var botaoLimpar = document.getElementById('limpar')
             var resultado = document.getElementById('resultado')
             var melhorias = document.getElementById('melhorias')
             var media = document.getElementById('media')
-            media = (confeitaria + coberturas + bolos) / 3;
             botaoLimpar.addEventListener('click', limparClick, false);
             function limparClick() {
                resultado.textContent = " ";
                melhorias.textContent = " ";
+               media.textContent = " "
             }
             botaoAvaliar.addEventListener('click', avaliarClick, false);
             function avaliarClick() {
-                if(media >= 60){
-                resultado.textContent = "Parabéns "+nome+ "! Você está aprovado com média" +media+ "!";
-                }
+                media.textContent = (Number(confeitaria.textContent) + Number(coberturas.textContent) 
+                + Number(bolos.textContent)) / 3;
+                if(media.textContent >= 60){
+                resultado.textContent = "Parabéns "+nome.textContent+ "! Você está aprovado com média " +media.textContent+ "!";
+                media.textContent = " ";}
                 else{
-                resultado.textContent = "Você está reprovado com média" +media+ "!";
+                resultado.textContent = "Você está reprovado com média " +media.textContent+ "!";
+                media.textContent = " ";
                 }
+                if(confeitaria.textContent < 60){
+                    melhorias.textContent = nome.textContent+ " considere estudar mais Confeitaria Básica";
+                    media.textContent = " ";} 
+                if(coberturas.textContent< 60){
+                    melhorias.textContent = nome.textContent+ " considere estudar mais Coberturas";
+                    media.textContent = " ";}
+                if(bolos.textContent < 60){
+                    melhorias.textContent =  nome.textContent + " considere estudar mais Broas e Bolos";
+                    media.textContent = " ";}
+                if(confeitaria.textContent < 60 && coberturas.textContent < 60){
+                    melhorias.textContent = nome.textContent+ " considere estudar mais Confeitaria Básica";
+                    melhorias.textContent = nome.textContent+ " considere estudar mais Coberturas";
+                    media.textContent = " "; }
+                if(confeitaria.textContent < 60 && bolos.textContent < 60){
+                    melhorias.textContent = nome.textContent+ " considere estudar mais Confeitaria Básica";
+                    melhorias.textContent = nome.textContent+ " considere estudar mais Broas e Bolos";
+                    media.textContent = " ";}
+                if(coberturas.textContent < 60 && bolos.textContent < 60){
+                    melhorias.textContent = nome.textContent+ " considere estudar mais Coberturas";
+                    melhorias.textContent = nome.textContent+ " considere estudar mais Broas e Bolos";
+                    media.textContent = " ";}
+                if(coberturas.textContent < 60 && bolos.textContent < 60 && confeitaria.textContent < 60){
+                    melhorias.textContent = nome.textContent+ " considere estudar mais Confeitaria Básica";
+                    melhorias.textContent = nome.textContent+ " considere estudar mais Coberturas";
+                    melhorias.textContent = nome.textContent+ " considere estudar mais Broas e Bolos";
+                    media.textContent = " ";}
             }
         </script>
     </main>
